@@ -1,4 +1,4 @@
-
+# Inherits object for python 2.x compatability
 class Parser(object):
   """Genrates abstract syntax tree from tokens"""
 
@@ -7,5 +7,5 @@ class Parser(object):
 
   def parse(self):
     """Converts token stream to AST"""
-    
+
     tokens = self.tokens

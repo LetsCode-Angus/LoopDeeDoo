@@ -1,4 +1,4 @@
-
+# Inherits object for python 2.x compatability
 class Lexer(object):
   """The primary tokenizer object"""
 

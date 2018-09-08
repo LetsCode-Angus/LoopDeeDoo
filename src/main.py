@@ -1,4 +1,5 @@
 import lexer
+import parser
 
-lex = lexer.Lexer("var Hello, World!")
-print(lex.tokenize.__doc__)
+lex = lexer.Lexer()
+par = parser.Parser()
