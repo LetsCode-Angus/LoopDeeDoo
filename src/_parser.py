@@ -9,3 +9,6 @@ class Parser(object):
     """Converts token stream to AST"""
 
     tokens = self.tokens
+
+    for i, token in enumerate(tokens):
+      print(f"{i}: '{token[0]}' - {token[1]}")
