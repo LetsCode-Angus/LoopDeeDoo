@@ -1,17 +1,22 @@
 RESERVED = 'RESERVED'
-INT = 'INT'
+INT = 'INTEGER_LITERAL'
 ID = 'IDENTIFIER'
-STRING = 'STRING'
+STRING = 'STRING_LITERAL'
+FLOAT = 'FLOAT_LITERAL'
 TERMINATOR = 'TERMINATOR'
+OPERATOR = 'OPERATOR'
+SEPERATOR = 'SEPERATOR'
 
 token_exprs = [
     (r'[ \n\t]+',               None),
     (r'\(:[^\n]*',              None), # Comment
     (r'\:=',                    RESERVED),
+    (r',',                      SEPERATOR),
+    (r'\.',                     SEPERATOR),
     (r'\(',                     RESERVED),
     (r'\)',                     RESERVED),
     (r';',                      TERMINATOR),
-    (r'\+',                     RESERVED),
+    (r'\+',                     OPERATOR),
     (r'-',                      RESERVED),
     (r'\*',                     RESERVED),
     (r'/',                      RESERVED),
@@ -25,6 +30,8 @@ token_exprs = [
     (r'END',                    RESERVED),
     (r'void',                   RESERVED),
     (r'loop dee doo',           ID),
+    (r'[0-9]+f',                FLOAT),
+    (r'[0-9]+\.[0-9]+(f|F)?',   FLOAT),
     (r'[0-9]+',                 INT),
     (r'[A-Za-z][A-Za-z0-9_]*',  ID),
     (r'"(.*?(?<!\\))"',         STRING),

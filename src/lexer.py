@@ -37,7 +37,7 @@ class Lexer(object):
           break
       if not match:
         if source[pos] == '"': raise UnbalancedQuotes(pos, "Quotes were unbalanced")
-        else: raise UnknowTokenError(pos)
+        else: raise UnknowTokenError(pos, source[pos])
       else:
         pos = match.end(0)
         
