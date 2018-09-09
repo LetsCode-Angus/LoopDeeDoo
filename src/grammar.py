@@ -6,7 +6,7 @@ TERMINATOR = 'TERMINATOR'
 
 token_exprs = [
     (r'[ \n\t]+',               None),
-    (r'\(:[^\n]*',                None), # Comment
+    (r'\(:[^\n]*',              None), # Comment
     (r'\:=',                    RESERVED),
     (r'\(',                     RESERVED),
     (r'\)',                     RESERVED),
