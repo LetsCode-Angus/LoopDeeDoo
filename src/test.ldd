@@ -4,7 +4,7 @@ END
 
 void Print(message)
   wtf (message);
-END
+END 
 
 loop dee doo ("hows life")
   num = 1f + 4.00;

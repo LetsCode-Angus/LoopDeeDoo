@@ -23,7 +23,7 @@ class Lexer(object):
         regex = re.compile(pattern)
 
         # Tests for regex match at pos, if found continues to match characters until
-        # non further matches are found. If there is no match, match returns 'None'
+        # no further matches are found. If there is no match, match returns 'None'
         match = regex.match(source, pos)
         if match:
           text = match.group(0)
@@ -35,6 +35,7 @@ class Lexer(object):
             
             tokens.append(token)
           break
+
       if not match:
         if source[pos] == '"': raise UnbalancedQuotes(pos, "Quotes were unbalanced")
         else: raise UnknowTokenError(pos, source[pos])

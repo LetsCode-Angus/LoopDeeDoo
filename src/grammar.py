@@ -1,3 +1,8 @@
+
+"""This is the grammar for LoopDeeDoo. This file defines the language tokens"""
+
+# These are the token types.
+# These are used by our parser to quickly make decisions
 RESERVED = 'RESERVED'
 INT = 'INTEGER_LITERAL'
 ID = 'IDENTIFIER'
@@ -7,6 +12,8 @@ TERMINATOR = 'TERMINATOR'
 OPERATOR = 'OPERATOR'
 SEPERATOR = 'SEPERATOR'
 
+# Token_exprs is a list of RegExs used to match token types
+# Each one is a tuple in the form (RegEx, Type)
 token_exprs = [
     (r'[ \n\t]+',               None),
     (r'\(:[^\n]*',              None), # Comment
@@ -37,9 +44,15 @@ token_exprs = [
     (r'"(.*?(?<!\\))"',         STRING),
 ]
 
+# These rules are used by the lexer to perform special
+# changes to the value of a token after creation.
+# This is usefull if the value contains chars unecessary to the parser.
 sub_rules = {
-    'STRING' : [
+    'STRING_LITERAL' : [
           (r'\"', '\"'),
-          (r'\\', '\\')
-      ]
+          (r'\\', '\\'),
+    ],
+    'FLOAT_LITERAL' : [
+          (r'f' : ''),
+    ]
 }
