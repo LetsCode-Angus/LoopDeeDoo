@@ -6,7 +6,7 @@ TERMINATOR = 'TERMINATOR'
 
 token_exprs = [
     (r'[ \n\t]+',               None),
-    (r'#[^\n]*',                None),
+    (r'\(:[^\n]*',                None), # Comment
     (r'\:=',                    RESERVED),
     (r'\(',                     RESERVED),
     (r'\)',                     RESERVED),
@@ -24,7 +24,7 @@ token_exprs = [
     (r'if',                     RESERVED),
     (r'END',                    RESERVED),
     (r'void',                   RESERVED),
-    (r'loop dee doo',           RESERVED),
+    (r'loop dee doo',           ID),
     (r'[0-9]+',                 INT),
     (r'[A-Za-z][A-Za-z0-9_]*',  ID),
     (r'"(.*?(?<!\\))"',         STRING),

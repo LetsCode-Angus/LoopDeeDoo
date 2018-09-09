@@ -1,3 +1,4 @@
 void main
-  print("this is \" sick");
+  (: print("this is \" sick");
+  loop dee doo("full shwacks")
 END

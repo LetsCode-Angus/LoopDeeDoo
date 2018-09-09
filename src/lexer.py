@@ -1,5 +1,6 @@
 import re
 import sys
+from exceptions import *
 
 # Inherits object for python 2.x compatability
 class Lexer(object):
@@ -35,8 +36,8 @@ class Lexer(object):
             tokens.append(token)
           break
       if not match:
-        sys.stderr.write('Illegal character: %i\\n' % pos)
-        sys.exit(1)
+        if source[pos] == '"': raise UnbalancedQuotes(pos, "Quotes were unbalanced")
+        else: raise UnknowTokenError(pos)
       else:
         pos = match.end(0)
         
