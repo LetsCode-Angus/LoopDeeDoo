@@ -53,6 +53,6 @@ sub_rules = {
           (r'\\', '\\'),
     ],
     'FLOAT_LITERAL' : [
-          (r'f' : ''),
+          (r'f',   ''),
     ]
 }

@@ -2,9 +2,12 @@ import lexer
 import _parser
 import sys
 import grammar
+import json
 from exceptions import *
 
 try:
+  file = open('grammar.json', 'w')
+  json.dump(grammar.token_exprs, file)
   lex = lexer.Lexer(grammar.token_exprs)
   source = open(sys.argv[1], 'r').read()
   tokens = lex.tokenize(source)
