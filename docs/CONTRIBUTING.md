@@ -2,6 +2,7 @@
 ***
 ## Basic definitions 
 As with all projects, its important we define some key tersm in order to create a more effective and cohesive communication language.
+
 **Tightly Bound Development:** All parts of a project that requires specific and well communicated knowledge of the code's architecture. This generally refers to more complicated and layered parts of a code base.
 
 **Loosely Bound Development:** Areas of a project which are highly isolated. Changes in these parts are unlikely to create problems in other parts of the code base.
