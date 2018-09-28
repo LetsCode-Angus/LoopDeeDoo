@@ -6,8 +6,9 @@ from ldd_core.exceptions import *
 class Lexer(object):
   """The primary tokenizer object"""
 
-  def __init__(self, token_exprs):
+  def __init__(self, token_exprs, sub_rules):
     self.token_exprs = token_exprs
+    sefl.sub_rules = sub_rules
 
   def tokenize(self, source):
     """Converts source to token stream"""
@@ -28,12 +29,14 @@ class Lexer(object):
         if match:
           text = match.group(0)
           if tag:
-            token = (tag, text)
-            # ! HACK: Handles string escaping
-            # TODO: Implement proper sub rules here
-            if tag == 'STRING':
-              token = (tag, text[1:-1].replace('\\"', '\"'))
             
+            if tag in self.sub_rules:
+              sub_pairs = self.sub_rules[tag]
+              for pair in sub_pairs:
+                sub, replace = pair
+                text = text.replace(sub, replace)
+                
+            token = (tag, text)
             tokens.append(token)
           break
 
