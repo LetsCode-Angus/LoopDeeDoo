@@ -1,7 +1,7 @@
 # Contributing guide
 ***
 ## Basic definitions 
-As with all projects, its important we define some key tersm in order to create a more effective and cohesive communication language.
+As with all projects, its important we define some key terms in order to create a more effective and cohesive communication language.
 
 **Tightly Bound Development:** All parts of a project that requires specific and well communicated knowledge of the code's architecture. This generally refers to more complicated and layered parts of a code base.
 
