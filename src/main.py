@@ -6,7 +6,7 @@ from ldd_core.exceptions import *
 
 try:
   print(lexer.__doc__)
-  lex = lexer.Lexer(grammar.token_exprs)
+  lex = lexer.Lexer(grammar.token_exprs, grammar.sub_rules)
   source = open(sys.argv[1], 'r').read()
   tokens = lex.tokenize(source)
   with open('tokens.txt', 'w') as file:
