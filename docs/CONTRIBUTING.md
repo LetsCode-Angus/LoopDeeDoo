@@ -20,7 +20,7 @@ As with all projects, its important we define some key tersm in order to create 
 
 **REPL:** Read-Evaluate-Print-Loop. This refers to an interactive shell used to communicate with a program. An example of a REPL is command prompt.
 
-## Devlopment Branches
+## Development Branches
 There are two main branches of development for LDD. LDD Core and LDD Standard Library. The core regards to any development which actually implements the language. It includes the development of the Lexer, Parser, Evaluator and REPL. This is where the spec and grammar of the language are implemented and behaviour is defined. This can be though of as tightly bound development and can constitute changes to all MAJOR.MINOR.PATCH-label changes to the SemVer tag. The standard library branch is strictly for spec independant development. This is where all the low lying fruit is (aka. the easy stuff). The standard library is  the collection of code which can be called by default (things like 'print',  'read_file' and 'random_number' should be implemented here. The standard library can be written in platform native code (Python) or in LDD. For more info read 'Development Strategy' below.
 
 ## Making changes and adding features
