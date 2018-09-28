@@ -1,6 +1,6 @@
 import re
 import sys
-from exceptions import *
+from ldd_core.exceptions import *
 
 # Inherits object for python 2.x compatability
 class Lexer(object):
@@ -29,7 +29,8 @@ class Lexer(object):
           text = match.group(0)
           if tag:
             token = (tag, text)
-            # HACK: Handles string escaping
+            # ! HACK: Handles string escaping
+            # TODO: Implement proper sub rules here
             if tag == 'STRING':
               token = (tag, text[1:-1].replace('\\"', '\"'))
             

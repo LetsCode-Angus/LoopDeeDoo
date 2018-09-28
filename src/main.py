@@ -1,13 +1,11 @@
-import lexer
-import _parser
 import sys
-import grammar
-import json
-from exceptions import *
+import ldd_core.grammar as grammar
+import ldd_core.lexer as lexer
+import ldd_core._parser as _parser
+from ldd_core.exceptions import *
 
 try:
-  file = open('grammar.json', 'w')
-  json.dump(grammar.token_exprs, file)
+  print(lexer.__doc__)
   lex = lexer.Lexer(grammar.token_exprs)
   source = open(sys.argv[1], 'r').read()
   tokens = lex.tokenize(source)
