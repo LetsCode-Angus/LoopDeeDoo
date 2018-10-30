@@ -4,11 +4,12 @@ from ldd_core.exceptions import *
 
 # Inherits object for python 2.x compatability
 class Lexer(object):
+   
   """The primary tokenizer object"""
 
   def __init__(self, token_exprs, sub_rules):
     self.token_exprs = token_exprs
-    sefl.sub_rules = sub_rules
+    self.sub_rules = sub_rules
 
   def tokenize(self, source):
     """Converts source to token stream"""
