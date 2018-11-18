@@ -1,3 +1,6 @@
+extern func __swoidoRAND as Random
+extern var __constPI as PI
+
 void MyFunction()
   (: Do stuff here
 END
@@ -24,3 +27,6 @@ func Gen(data)
   return data.Compile()
 
 myGen = Gen()
+
+
+if name is 'Fred': say('hello fred');

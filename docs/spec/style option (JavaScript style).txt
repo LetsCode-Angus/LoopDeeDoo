@@ -1,0 +1,22 @@
+(: Imports random float function from unsupported library code
+extern ST_LIB _swoidoRANDOM.sRandFloat as fRand
+
+(: Imports random function from supported library code
+import sRandInt as rand
+
+(: Defines a function called print
+var print = {:(text) wtf(text)}
+
+(: Defines a function called 'file_print'
+var file_print = {:(filename, text) fwtf(filename, text)}
+
+print("my text")
+
+var a = "more text"
+
+print("even " + a)
+
+print(rand())
+
+file_print('my float.txt', fRand())
+
