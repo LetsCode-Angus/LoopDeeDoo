@@ -30,7 +30,7 @@ class Lexer(object):
         if match:
           text = match.group(0)
           if tag:
-            
+             
             if tag in self.sub_rules:
               sub_pairs = self.sub_rules[tag]
               for pair in sub_pairs:
